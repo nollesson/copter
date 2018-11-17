@@ -1,8 +1,11 @@
 #include <avr/io.h>
+#include <stdint.h>
 
 int main() {
-  DDRD = 0x20;
-  PORTD |= 0x20;
+  DDRB |= 0x20;
 
-  while (true);
+  PORTB |= 0x20;
+  PORTB &= ~0x20;
+
+  while(true);
 }

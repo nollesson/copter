@@ -5,4 +5,5 @@ To hopefully design a reasonably stable quad copter from 'scratch' with an Ardui
 * Ubuntu 16
 * avr-gcc
 * avr-libc
+* avrdude
 * Bazel

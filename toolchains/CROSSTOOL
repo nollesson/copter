@@ -100,7 +100,7 @@ toolchain {
 
   compilation_mode_flags {
     mode: FASTBUILD
-    compiler_flag: "-Os"
+    compiler_flag: "-O0"
   }
 
   compilation_mode_flags {
