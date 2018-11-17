@@ -1,0 +1,5 @@
+# .bazelrc
+
+build:arduino --crosstool_top=//toolchains:arduino-toolchain
+build:arduino --cpu=avr
+build:arduino --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
