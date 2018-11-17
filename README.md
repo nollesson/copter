@@ -7,3 +7,4 @@ To hopefully design a reasonably stable quad copter from 'scratch' with an Ardui
 * avr-libc
 * avrdude
 * Bazel
+* user in dialout group

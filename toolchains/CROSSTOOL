@@ -19,6 +19,9 @@ toolchain {
   abi_version: "avr"
   abi_libc_version: "avr"
 
+  supports_thin_archives: true
+  supports_normalizing_ar: true
+
   tool_path {
     name: "ar"
     path: "/usr/bin/avr-ar"
@@ -60,9 +63,6 @@ toolchain {
     path: "/usr/bin/avr-strip"
   }
 
-  supports_thin_archives: true
-  supports_normalizing_ar: true
-
   # Always include debug info since it has no impact program size when flashed
   compiler_flag: "-g3"
 
@@ -84,24 +84,14 @@ toolchain {
   unfiltered_cxx_flag: "-D__TIMESTAMP__=\"redacted\""
   unfiltered_cxx_flag: "-D__TIME__=\"redacted\""
 
-  # Stamp the binary with a unique identifier
-  linker_flag: "-Wl,--build-id=md5"
-
   # Arduino-specific defines
-  compiler_flag: "-DF_CPU=16000000"
+  compiler_flag: "-DF_CPU=16000000L"
   compiler_flag: "-mmcu=atmega328p"
-
-  objcopy_embed_flag: "-I"
-  objcopy_embed_flag: "binary"
+  linker_flag: "-mmcu=atmega328p"
 
   cxx_builtin_include_directory: "/usr/lib/gcc/avr/4.9.2/include"
   cxx_builtin_include_directory: "/usr/lib/gcc/avr/4.9.2/avr/4.9.2/include-fixed"
   cxx_builtin_include_directory: "/usr/lib/avr/include"
-
-  compilation_mode_flags {
-    mode: FASTBUILD
-    compiler_flag: "-O0"
-  }
 
   compilation_mode_flags {
     mode: DBG
