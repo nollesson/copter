@@ -1,4 +1,9 @@
 cc_binary(
-	name="main",
-	srcs=["main.cpp"]
+	name="FlashLed",
+	srcs=["FlashLed.cpp"]
+)
+
+cc_binary(
+	name="EchoSerial",
+	srcs=["EchoSerial.cpp"]
 )
