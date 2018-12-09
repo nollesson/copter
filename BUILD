@@ -5,5 +5,6 @@ cc_binary(
 
 cc_binary(
 	name="EchoSerial",
-	srcs=["EchoSerial.cpp"]
+	srcs=["EchoSerial.cpp"],
+	deps=["//Libraries/ArduinoCore"]
 )

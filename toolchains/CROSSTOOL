@@ -76,7 +76,7 @@ toolchain {
   compiler_flag: "-pedantic"
   compiler_flag: "-Werror"
 
-  compiler_flag: "-std=c++0x"
+  compiler_flag: "-std=c++1y"
 
   # Make C++ compilation deterministic
   unfiltered_cxx_flag: "-Wno-builtin-macro-redefined"
