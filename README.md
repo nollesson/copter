@@ -2,9 +2,9 @@
 To hopefully design a reasonably stable quad copter from 'scratch' with an ArduinoOne for the flight controlles.
 
 # Dependencies
-* Ubuntu 16
+* Ubuntu 18.04
 * avr-gcc
-* avr-libc
+* avr-libc 5.4.0
 * avrdude
 * Bazel
 * user in dialout group

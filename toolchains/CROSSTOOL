@@ -89,8 +89,8 @@ toolchain {
   compiler_flag: "-mmcu=atmega328p"
   linker_flag: "-mmcu=atmega328p"
 
-  cxx_builtin_include_directory: "/usr/lib/gcc/avr/4.9.2/include"
-  cxx_builtin_include_directory: "/usr/lib/gcc/avr/4.9.2/avr/4.9.2/include-fixed"
+  cxx_builtin_include_directory: "/usr/lib/gcc/avr/5.4.0/include"
+  cxx_builtin_include_directory: "/usr/lib/gcc/avr/5.4.0/avr/5.4.0/include-fixed"
   cxx_builtin_include_directory: "/usr/lib/avr/include"
 
   compilation_mode_flags {
