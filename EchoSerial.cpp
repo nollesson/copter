@@ -2,17 +2,14 @@
 
 #include <util/delay.h>
 
-int main()
-{
-    init();
-    Serial.begin(9600);
+int main() {
+  init();
+  Serial.begin(9600);
 
-    while(1)
-    {
-        if (Serial.available() > 0)
-        {
-   		    Serial.write(Serial.read());
-        }
-        //if (serialEventRun) serialEventRun();
+  while (1) {
+    if (Serial.available() > 0) {
+      Serial.write(Serial.read());
     }
+    // if (serialEventRun) serialEventRun();
+  }
 }
