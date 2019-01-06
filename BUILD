@@ -17,3 +17,13 @@ cc_binary(
         "//Libraries/ArduinoCore",
     ],
 )
+
+cc_binary(
+    name = "StreamSensor",
+    srcs = ["StreamSensor.cpp"],
+    deps = [
+        "//Hal:Twi",
+        "//Libraries/ArduinoCore",
+    ],
+)
+
