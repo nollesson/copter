@@ -10,6 +10,12 @@ cc_binary(
 )
 
 cc_binary(
+    name = "RunPwm",
+    srcs = ["RunPwm.cpp"],
+    deps = ["//Libraries/ArduinoCore"],
+)
+
+cc_binary(
     name = "ScanTwiAddresses",
     srcs = ["ScanTwiAddresses.cpp"],
     deps = [
