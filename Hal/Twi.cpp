@@ -60,8 +60,7 @@ bool testAddress(uint8_t const address) {
   _address = (address << 1) + TWI_WRITE;
 
   start();
-  while (!_isFinished) {
-  }
+  while (!_isFinished);
   return _status != TW_MT_SLA_NACK;
 }
 
@@ -72,8 +71,7 @@ bool writeData(uint8_t const address, uint8_t const *const data, int const size,
   _address = (address << 1) + TWI_WRITE;
 
   start();
-  while (!_isFinished) {
-  }
+  while (!_isFinished);
   return _status == TW_MT_DATA_ACK;
 }
 
@@ -84,17 +82,13 @@ bool readData(uint8_t const address, uint8_t *const data, int const size, bool s
   _shouldStop = shouldStop;
   _address = (address << 1) + TWI_READ;
 
-  Serial.println("READ");
   start();
-  while (!_isFinished) {
-  }
+  while (!_isFinished);
   return _status == TW_MR_DATA_ACK;
 }
 
 ISR(TWI_vect) {
   _status = TW_STATUS;
-  Serial.print("--");
-  Serial.println(_status, HEX);
 
   switch (_status) {
   case TW_START:
@@ -105,8 +99,6 @@ ISR(TWI_vect) {
   case TW_MT_SLA_ACK:
   case TW_MT_DATA_ACK:
     if (_size > 0) {
-      Serial.print("W 0x");
-      Serial.println(*_writeData, HEX);
       TWDR = *_writeData;
       TWCR = (TWCR | (1 << TWINT)) & ~((1 << TWSTA) | (1 << TWSTO));
       ++_writeData;
@@ -124,8 +116,6 @@ ISR(TWI_vect) {
     break;
   case TW_MR_DATA_ACK:
     *_readData = TWDR;
-    Serial.print("R 0x");
-    Serial.println(*_readData, HEX);
     if (_size > 1)
     {
       TWCR = (TWCR | ((1 << TWINT) | (1 << TWEA))) & ~((1 << TWSTA) | (1 << TWSTO));
