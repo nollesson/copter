@@ -16,6 +16,11 @@ cc_binary(
 )
 
 cc_binary(
+    name = "EchoBluetooth",
+    srcs = ["EchoBluetooth.cpp"],
+)
+
+cc_binary(
     name = "ScanTwiAddresses",
     srcs = ["ScanTwiAddresses.cpp"],
     deps = [
