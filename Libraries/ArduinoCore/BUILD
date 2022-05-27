@@ -18,7 +18,8 @@ cc_library(
         "Print.h",
         "Printable.h",
         "Server.h",
-	"SoftwareSerial.cpp",
+	    "SoftwareSerial.cpp",
+        "Stepper.cpp",
         "Stream.cpp",
         "Stream.h",
         "Tone.cpp",
@@ -46,7 +47,8 @@ cc_library(
     ],
     hdrs = [
         "Arduino.h",
-	"SoftwareSerial.h",
+	    "SoftwareSerial.h",
+        "Stepper.h"
     ],
     visibility = ["//visibility:public"],
 )
